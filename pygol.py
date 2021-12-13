@@ -88,18 +88,17 @@ def main(stdscr):
     stdscr.refresh()
     stdscr.getch()
 
+    for i in board:
+        for j in i:
+            j.play()
     while True:
-        for i in board:
-            for j in i:
-                j.play()
         for i in  edits:
             i()
-        edits = next_edits
-        next_edits.clear()
-        edits.clear()
         for i in  plays:
             i()
         plays.clear()
+        edits = next_edits.copy()
+        next_edits.clear()
 
         stdscr.clear()
         for i in board:
