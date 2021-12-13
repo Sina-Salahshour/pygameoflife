@@ -79,7 +79,7 @@ def main(stdscr):
     
     for i in range(len(data)):
         for j in range(len(data[i])):
-            if data[i][j]=='X':
+            if data[i][j] in 'X#':
                 board[i][j].switch()
     stdscr.clear()
     for i in board:
